@@ -34,7 +34,7 @@ emailRouter.post("/neueanfrage",
             Wir melden uns in Kürze bei dir.
             
                  Bis dahin wünschen wir dir eine angenehme Zeit
-                   Deine Eigenheimer `
+                  Michaela Werthmann`
         }
         )
 
