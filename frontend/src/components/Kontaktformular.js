@@ -15,14 +15,14 @@ const Kontaktformular = () => {
     const [show, setShow] = useState(false)
     const [checkbox, setCheckbox] = useState(false)
 
-    function handleErrors(response) {
-        if (!response.ok) {
-            return alert("Bitte überprüfe deine Eingabe, deine Nachricht konnte nicht übermittelt werden.")
-        }
-        else {
-            return setShow(true), setName(""), setText(""), setEmail(""), setCheckbox(false);
-        }
-    }
+    // function handleErrors(response) {
+    //     if (!response.ok) {
+    //         return alert("Bitte überprüfe deine Eingabe, deine Nachricht konnte nicht übermittelt werden.")
+    //     }
+    //     else {
+    //         return setShow(true), setName(""), setText(""), setEmail(""), setCheckbox(false);
+    //     }
+    // }
 
     const sendNewRequest = (e) => {
         e.preventDefault();
@@ -53,8 +53,7 @@ const Kontaktformular = () => {
                     email,
                     text
                 })
-            }).then(handleErrors)
-                .then(res => res.json())
+            }).then(res => res.json(), setShow(true), setName(""), setText(""), setEmail(""), setCheckbox(false))
                 .catch((error) => {
                     console.log(error)
                 })
